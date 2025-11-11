@@ -1,0 +1,36 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block tittle %}El mejor blog de españa{% endblock %}</title>
+    {%block style%}<link rel="stylesheet" href="{% static 'css/style.css'%}">{% endblock %}
+</head>
+<body>
+    <nav>
+        <ul>
+            <a href="{% url 'inicio'%}"><li>Inicio</li></a>
+            <a href="{% url 'autores'%}"><li>Autores</li></a>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>{% block titulo %}Título default{% endblock %}</h1>
+
+        {% block contenido %}
+        <p>Contenido</p>
+        {% endblock %}
+
+    </div>
+
+   <div class="footer-bottom">
+        
+        <p class="copyright">
+            Copyright &copy; Blog 2025. Todos los derechos reservados.
+        </p>
+
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,11 @@
+{% extends 'blog/template_base.html'%}
+
+  {%block tittle %}Autores{% endblock %}
+  {%block titulo %}Autores{% endblock %}
+    {% block contenido %}
+      <ul>
+    {% for autor in autores %}
+           <a href="{% url 'autor_post' pk=autor.pk %}"><li>{{autor.nombre}} {{autor.apellidos}}</li></a>
+    {%endfor%}
+     </ul>
+    {%endblock%}

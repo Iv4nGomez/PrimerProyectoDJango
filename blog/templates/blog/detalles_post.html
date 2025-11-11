@@ -1,0 +1,27 @@
+{% extends 'blog/template_base.html' %}
+
+{%block tittle %}{{entradas.titulo}}{% endblock %}
+
+{%block titulo %}Post:{% endblock %}
+
+  {% block contenido %}
+    <div class="post-detail-container">
+        
+        <h1 class="post-title">{{entradas.titulo}}</h1>
+        
+
+        <div class="post-meta">
+            <span>Por: <strong>{{entradas.autor}}</strong></span>
+            <span>{{entradas.fecha}}</span>
+        </div>
+        
+
+
+        <div class="post-body">
+            {{entradas.cuerpo}}
+        </div>
+        <a href="{% url 'inicio' %}" class="back-link">&larr; Volver a todos los posts</a>
+    </div>
+      {% endblock %}
+</body>
+</html>
