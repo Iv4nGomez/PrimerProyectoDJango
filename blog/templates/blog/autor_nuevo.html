@@ -1,0 +1,12 @@
+{% extends 'blog/template_base.html'%}
+
+{%block titulo %}Post:{% endblock %}
+
+{% block contenido %}
+<form method="POST" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+    
+    <button type="submit">Enviar</button>
+</form>
+{% endblock %}
